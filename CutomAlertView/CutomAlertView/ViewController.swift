@@ -15,5 +15,20 @@ class ViewController: UIViewController {
 
     }
 
+    // MARK: Show Cities Button Action
+    
+    @IBAction func showCitiesTapped(sender: UIButton) {
+        let viewController = UIApplication.sharedApplication().keyWindow?.rootViewController
+        viewController!.definesPresentationContext = true
+        
+        let popUpviewController = PopUpViewController(nibName: "PopUpViewController", bundle: nil)
+        popUpviewController.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+        popUpviewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        
+        
+        viewController!.presentViewController(popUpviewController, animated: true, completion: nil)
+        
+    }
+    
 }
 
