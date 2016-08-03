@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, PopUpViewControllerDelegate {
 
+    @IBOutlet weak var selectedCityLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,12 +24,19 @@ class ViewController: UIViewController {
         viewController!.definesPresentationContext = true
         
         let popUpviewController = PopUpViewController(nibName: "PopUpViewController", bundle: nil)
+        popUpviewController.delegate = self
         popUpviewController.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
         popUpviewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         
         
         viewController!.presentViewController(popUpviewController, animated: true, completion: nil)
         
+    }
+    
+    // MARK: PopUpViewController Delegate
+    
+    func selectedRowText(text: String) {
+        self.selectedCityLabel.text = text
     }
     
 }

@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol PopUpViewControllerDelegate: class {
+    func selectedRowText(text: String)
+}
+
 class PopUpViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     var dataArray: NSArray!
+    weak var delegate: PopUpViewControllerDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +47,7 @@ class PopUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        delegate?.selectedRowText(dataArray[row] as! String)
         
     }
 

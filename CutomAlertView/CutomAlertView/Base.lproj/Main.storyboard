@@ -31,13 +31,28 @@
                                     <action selector="showCitiesTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aQ6-mh-x7a"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19L-C4-Gc8">
+                                <rect key="frame" x="242" y="237" width="116" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="116" id="Ux2-jl-VMq"/>
+                                    <constraint firstAttribute="height" constant="27" id="esP-RL-qHs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Cs2-7H-lQf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Hch-W3-eml"/>
+                            <constraint firstItem="19L-C4-Gc8" firstAttribute="centerX" secondItem="Cs2-7H-lQf" secondAttribute="centerX" id="KeE-NJ-LHa"/>
                             <constraint firstItem="Cs2-7H-lQf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="efF-8h-reO"/>
+                            <constraint firstItem="Cs2-7H-lQf" firstAttribute="top" secondItem="19L-C4-Gc8" secondAttribute="bottom" constant="21" id="t8i-i1-cNY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="selectedCityLabel" destination="19L-C4-Gc8" id="38u-AU-uxR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
