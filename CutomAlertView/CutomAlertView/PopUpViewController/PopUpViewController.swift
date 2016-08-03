@@ -20,7 +20,11 @@ class PopUpViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     override func viewDidLoad() {
         super.viewDidLoad()
         dataArray = Constants.CitiesDataSource
-   
+    
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        delegate?.selectedRowText(dataArray[0] as! String)
     }
     
     // MARK:- Done Button Action
